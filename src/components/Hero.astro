@@ -1,16 +1,13 @@
 ---
+import ParallaxImage from './ParallaxImage.astro'
+
 const { title, description, date, image } = Astro.props
 ---
 
-<section
-  class={`min-h-dvh bg-fixed bg-center lg:[background-position-y:-200px] bg-cover font-quicksand relative`}
-  style={`background-image: url(${image})`}
->
-  <div
-    class='absolute bottom-32 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4'
-  >
+<ParallaxImage image={image}>
+  <div class='absolute bottom-32 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 font-quicksand'>
     <h1 class='font-dancing font-boXld text-8xl mb-10'>{title}</h1>
     <p class='uppercase text-2xl'>{description}</p>
     <p class='text-xl'>{date}</p>
   </div>
-</section>
+</ParallaxImage>

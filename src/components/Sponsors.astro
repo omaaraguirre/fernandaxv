@@ -1,14 +1,11 @@
 ---
+import ParallaxImage from './ParallaxImage.astro'
+
 const { message, groups, image } = Astro.props
 ---
 
-<section
-  class={`min-h-dvh bg-fixed bg-center bg-cover relative`}
-  style={`background-image: url(${image})`}
->
-  <div
-    class='absolute size-full bg-black/60 px-8 flex flex-col justify-center items-center gap-24 font-quicksand text-center'
-  >
+<ParallaxImage image={image}>
+  <div class='absolute size-full bg-black/60 px-8 flex flex-col justify-center items-center gap-24 font-quicksand text-center'>
     <p>{message}</p>
     {
       groups.map(({ title, persons }) => (
@@ -21,4 +18,4 @@ const { message, groups, image } = Astro.props
       ))
     }
   </div>
-</section>
+</ParallaxImage>

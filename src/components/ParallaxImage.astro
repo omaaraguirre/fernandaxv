@@ -1,0 +1,10 @@
+---
+const { image } = Astro.props
+---
+
+<section
+  class={`min-h-dvh bg-fixed bg-center lg:[background-position-y:-200px] bg-cover relative`}
+  style={`background-image: url(${image})`}
+>
+  <slot />
+</section>
