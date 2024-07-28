@@ -1,7 +1,8 @@
 ---
-import Layout from '@/layouts/Layout.astro'
 import Hero from '@/components/Hero.astro'
 import Invitation from '@/components/Invitation.astro'
+import { prefix } from '@/constants'
+import Layout from '@/layouts/Layout.astro'
 ---
 
 <Layout title='XV Fernanda'>
@@ -9,7 +10,7 @@ import Invitation from '@/components/Invitation.astro'
     title='Fernanda'
     description='¡Mis XV años!'
     date='Sábado, 27 de Diciembre 2024'
-    image='/img/photo-1.webp'
+    image={`${prefix}/img/photo-1.webp`}
   />
 
   <Invitation
