@@ -1,6 +1,7 @@
 ---
 import Hero from '@/components/Hero.astro'
 import Invitation from '@/components/Invitation.astro'
+import ParallaxImage from '@/components/ParallaxImage.astro'
 import Sponsors from '@/components/Sponsors.astro'
 import { prefix } from '@/constants'
 import Layout from '@/layouts/Layout.astro'
@@ -35,4 +36,6 @@ import Layout from '@/layouts/Layout.astro'
       },
     ]}
   />
+
+  <ParallaxImage image={`${prefix}/img/photo-2.webp`} />
 </Layout>
