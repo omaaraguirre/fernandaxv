@@ -1,7 +1,21 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from '@/layouts/Layout.astro'
+import Hero from '@/components/Hero.astro'
+import Invitation from '@/components/Invitation.astro'
 ---
 
-<Layout title="XV Fernanda">
-	<h1 class="text-3xl font-bold">XV Fernanda</h1>
+<Layout title='XV Fernanda'>
+  <Hero
+    title='Fernanda'
+    description='¡Mis XV años!'
+    date='Sábado, 27 de Diciembre 2024'
+    image='/img/photo-1.webp'
+  />
+
+  <Invitation
+    header='Será una noche mágica para mí y me encantaría que la disfrutes conmigo. Espero verte ahí.'
+    name='Nombre'
+    persons='# pases'
+    footer='¡Me hará muy feliz que me incorpores en este día tan especial!'
+  />
 </Layout>
