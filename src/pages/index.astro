@@ -2,6 +2,7 @@
 import Hero from '@/components/Hero.astro'
 import Invitation from '@/components/Invitation.astro'
 import ParallaxImage from '@/components/ParallaxImage.astro'
+import Schedule from '@/components/Schedule.astro'
 import Sponsors from '@/components/Sponsors.astro'
 import { prefix } from '@/constants'
 import Layout from '@/layouts/Layout.astro'
@@ -38,4 +39,16 @@ import Layout from '@/layouts/Layout.astro'
   />
 
   <ParallaxImage image={`${prefix}/img/photo-2.webp`} />
+
+  <Schedule
+    title='Dónde y cuando'
+    description='La ceremonia y recepción se llevarán a cabo en la misma ubicación:'
+    date='Sábado, 27 de Diciembre 2024'
+    times={['Ceremonia: 7:00pm', 'Recepción: 8:00pm']}
+    location={{
+      name: '"Salón de Eventos en Pachuca - Centala Eventos"',
+      address: 'Esquina con Blvrd. Ramón G. Bonfil, Blvd. Sta. Catarina, 42082 Pachuca de Soto, Hgo.',
+      link: 'https://maps.app.goo.gl/ts3FE1zkP58EaR1Z7',
+    }}
+  />
 </Layout>
