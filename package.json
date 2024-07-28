@@ -11,9 +11,9 @@
   },
   "dependencies": {
     "@astrojs/tailwind": "^5.1.0",
+    "@fontsource-variable/dancing-script": "^5.0.18",
+    "@fontsource-variable/quicksand": "^5.0.18",
     "astro": "^4.12.2",
-    "astro-icon": "^1.1.0",
-    "tailwind": "^4.0.0",
-    "tailwindcss": "^3.4.7"
+    "astro-icon": "^1.1.0"
   }
 }
