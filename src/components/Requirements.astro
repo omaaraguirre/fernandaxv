@@ -1,0 +1,31 @@
+---
+import ParallaxImage from './ParallaxImage.astro'
+
+const { image, title, code, message, info } = Astro.props
+---
+
+<ParallaxImage image={image}>
+  <div class='absolute size-full bg-black/60 px-8 flex flex-col justify-center items-center gap-10 font-quicksand text-center'>
+    <h2 class='font-dancing text-5xl text-accent'>{title}</h2>
+    <p class="text-lg uppercase">{code}</p>
+    <p>{message}</p>
+    <div class='w-full my-10 flex justify-around'>
+      {
+        info.map((info) => (
+          <div class="flex flex-col items-center gap-4">
+            <img
+              src={info.image}
+              alt={info.type}
+              class="max-h-40 w-auto m-8"
+            />
+            <h4 class="font-bold">{info.title}</h4>
+            <p>{info.type}</p>
+          </div>
+        ))
+      }
+    </div>
+    <div class="w-full p-8 border-2 border-accent rounded">
+      <p class="uppercase">- Sin niños -</p>
+    </div>
+  </div>
+</ParallaxImag>

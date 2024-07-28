@@ -2,6 +2,7 @@
 import Hero from '@/components/Hero.astro'
 import Invitation from '@/components/Invitation.astro'
 import ParallaxImage from '@/components/ParallaxImage.astro'
+import Requirements from '@/components/Requirements.astro'
 import Schedule from '@/components/Schedule.astro'
 import Sponsors from '@/components/Sponsors.astro'
 import { prefix } from '@/constants'
@@ -50,5 +51,24 @@ import Layout from '@/layouts/Layout.astro'
       address: 'Esquina con Blvrd. Ramón G. Bonfil, Blvd. Sta. Catarina, 42082 Pachuca de Soto, Hgo.',
       link: 'https://maps.app.goo.gl/ts3FE1zkP58EaR1Z7',
     }}
+  />
+
+  <Requirements 
+    image={`${prefix}/img/flores.webp`}
+    title='Dress code'
+    code="Formal"
+    message='El color rosado es reservado para la fiesta de cumpleaños'
+    info={[
+      {
+        title: 'Hombres',
+        type: 'Traje',
+        image: `${prefix}/img/suit.webp`,
+      },
+      {
+        title: 'Mujeres',
+        type: 'Vestido Largo',
+        image: `${prefix}/img/dress.webp`,
+      }
+    ]}
   />
 </Layout>
