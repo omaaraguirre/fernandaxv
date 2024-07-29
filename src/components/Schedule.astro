@@ -13,7 +13,7 @@ const { title, description, date, times, location } = Astro.props
   <p class='max-w-52'>{location.name}</p>
   <p>{location.address}</p>
   <a
-    class='text-accent text-xl uppercase px-12 py-2 border border-accent rounded-lg'
+    class='text-accent text-xl uppercase px-12 py-2 border border-accent rounded-lg hover:scale-110 transition-transform duration-300'
     href={location.link}
     >Abrir mapa</a
   >
