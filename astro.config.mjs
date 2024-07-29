@@ -1,11 +1,12 @@
+import react from "@astrojs/react"
 import tailwind from "@astrojs/tailwind"
 import icon from 'astro-icon'
 import { defineConfig } from 'astro/config'
 import path from "node:path"
 
-const folderName = path.basename(process.cwd());
-const mode = process.env.NODE_ENV;
-const base = mode === "production" ? `/${folderName}/` : "/";
+const folderName = path.basename(process.cwd())
+const mode = process.env.NODE_ENV
+const base = mode === "production" ? `/${folderName}/` : "/"
 
 // https://astro.build/config
 export default defineConfig({
@@ -17,9 +18,9 @@ export default defineConfig({
     outDir: "../dist",
     assetsDir: "./"
   },
-  integrations: [icon(), tailwind()],
+  integrations: [icon(), tailwind(), react()],
   server: {
     host: true,
     port: 80
   }
-});
+})

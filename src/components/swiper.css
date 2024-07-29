@@ -1,0 +1,16 @@
+:root {
+  --swiper-navigation-color: theme('colors.accent');
+  --swiper-pagination-color: theme('colors.accent');
+  --swiper-pagination-bullet-inactive-color: theme('colors.accent');
+  --swiper-pagination-bullet-inactive-opacity: 0.3;
+  --swiper-pagination-bullet-size: 12px;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  text-shadow:
+    5px 0 10px theme('colors.background'),
+    -5px 0 10px theme('colors.background'),
+    0 5px 10px theme('colors.background'),
+    0 -5px 10px theme('colors.background');
+}

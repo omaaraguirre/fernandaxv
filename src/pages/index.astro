@@ -1,4 +1,5 @@
 ---
+import Gallery from '@/components/Gallery'
 import Hero from '@/components/Hero.astro'
 import Invitation from '@/components/Invitation.astro'
 import ParallaxImage from '@/components/ParallaxImage.astro'
@@ -69,6 +70,18 @@ import Layout from '@/layouts/Layout.astro'
         type: 'Vestido Largo',
         image: `${prefix}/img/dress.webp`,
       }
+    ]}
+  />
+
+  <Gallery 
+    client:only="react"
+    images={[
+      `${prefix}/img/photo-1.webp`,
+      `${prefix}/img/photo-2.webp`,
+      `${prefix}/img/photo-3.webp`,
+      `${prefix}/img/photo-4.webp`,
+      `${prefix}/img/photo-5.webp`,
+      `${prefix}/img/photo-6.webp`
     ]}
   />
 </Layout>
