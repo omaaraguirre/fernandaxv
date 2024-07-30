@@ -8,8 +8,8 @@ import './swiper.css'
 
 const Gallery = ({ images }) => {
   return (
-    <section class='w-[95%] mx-auto px-8 py-20 bg-background flex flex-col items-center justify-center gap-12 font-quicksand text-base text-center'>
-      <h2 class='font-dancing text-5xl text-accent text-center'>Galería</h2>
+    <section className='w-full mx-auto px-8 py-20 bg-background flex flex-col items-center justify-center gap-12 font-quicksand text-base text-center'>
+      <h2 className='font-dancing text-5xl text-accent text-center'>Galería</h2>
       <p>Después de grandes momentos, sólo quedan magnificos recuerdos.</p>
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
@@ -19,7 +19,7 @@ const Gallery = ({ images }) => {
         autoplay
         navigation
         pagination={{ clickable: true }}
-        className='w-full max-w-xl aspect-[3/4] rounded-lg'
+        className='w-full h-auto md:max-h-[80svh] md:w-auto aspect-[3/4] rounded-lg'
       >
         {
           images.map((image, index) =>
