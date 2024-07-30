@@ -1,6 +1,7 @@
 ---
 import '@fontsource-variable/dancing-script'
 import '@fontsource-variable/quicksand'
+import '@/components/animations.css'
 
 interface Props {
 	title: string;
@@ -18,8 +19,44 @@ const { title } = Astro.props;
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+    <style is:inline>
+      body {
+        scroll-behavior: smooth;
+        scrollbar-gutter: stable both-edges;
+
+        &::-webkit-scrollbar {
+          --scrollbar-size: 7px;
+          
+          width: var(--scrollbar-size);
+          height: var(--scrollbar-size);
+        }
+
+        &::-webkit-scrollbar-track {
+          background: color-mix(in srgb, var(--accent), var(--background) 50%);
+          border-radius: 3px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+          background: var(--accent);
+          border-radius: 3px;
+        }
+      }
+
+      @supports not selector(::-webkit-scrollbar) {
+        body {
+          scrollbar-color: var(--accent) var(--primary-color);
+        }
+      }
+    </style>
 	</head>
 	<body class="bg-background text-white">
 		<slot />
 	</body>
 </html>
+
+<style is:global>
+  :root {
+    --accent: theme('colors.accent');
+    --background: theme('colors.background');
+  }
+</style>
