@@ -1,5 +1,5 @@
 ---
-import ParallaxImage from './ParallaxImage.astro'
+import ParallaxImage from '@/components/ParallaxImage.astro'
 
 const { image, title, code, message, info } = Astro.props
 ---
@@ -7,25 +7,25 @@ const { image, title, code, message, info } = Astro.props
 <ParallaxImage image={image}>
   <div class='absolute size-full bg-black/60 px-8 flex flex-col justify-center items-center gap-10 font-quicksand text-center'>
     <h2 class='font-dancing text-5xl text-accent'>{title}</h2>
-    <p class="text-lg uppercase">{code}</p>
+    <p class='text-lg uppercase'>{code}</p>
     <p>{message}</p>
     <div class='w-full max-w-4xl my-10 grid grid-cols-2 gap-8'>
       {
         info.map((info) => (
-          <div class="flex flex-col items-center gap-4">
+          <div class='flex flex-col items-center gap-4'>
             <img
               src={info.image}
               alt={info.type}
-              class="max-h-40 w-auto m-4"
+              class='max-h-40 w-auto m-4'
             />
-            <h4 class="font-bold">{info.title}</h4>
+            <h4 class='font-bold'>{info.title}</h4>
             <p>{info.type}</p>
           </div>
         ))
       }
     </div>
-    <div class="w-full max-w-sm p-8 border-2 border-accent rounded">
-      <p class="uppercase">- Sin niños -</p>
+    <div class='w-full max-w-sm p-8 border-2 border-accent rounded'>
+      <p class='uppercase'>- Sin niños -</p>
     </div>
   </div>
-</ParallaxImag>
+</ParallaxImage>
