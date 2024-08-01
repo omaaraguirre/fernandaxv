@@ -1,4 +1,6 @@
 ---
+import LinkButton from './LinkButton.astro'
+
 const { title, description, date, times, location } = Astro.props
 ---
 
@@ -12,9 +14,8 @@ const { title, description, date, times, location } = Astro.props
   </div>
   <p class='max-w-52'>{location.name}</p>
   <p>{location.address}</p>
-  <a
-    class='text-accent text-xl uppercase px-12 py-2 border border-accent rounded-lg hover:scale-110 transition-transform duration-300'
+  <LinkButton
     href={location.link}
-    >Abrir mapa</a
-  >
+    text='Abrir mapa'
+  />
 </section>
