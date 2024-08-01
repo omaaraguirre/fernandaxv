@@ -3,6 +3,7 @@ import Gallery from '@/components/Gallery'
 import Hero from '@/components/Hero.astro'
 import Invitation from '@/components/Invitation.astro'
 import ParallaxImage from '@/components/ParallaxImage.astro'
+import Regalos from '@/components/Regalos.astro'
 import Requirements from '@/components/Requirements.astro'
 import Schedule from '@/components/Schedule.astro'
 import Sponsors from '@/components/Sponsors.astro'
@@ -54,10 +55,10 @@ import Layout from '@/layouts/Layout.astro'
     }}
   />
 
-  <Requirements 
+  <Requirements
     image={`${prefix}/img/flores.webp`}
     title='Dress code'
-    code="Formal"
+    code='Formal'
     message='El color rosado es reservado para la fiesta de cumpleaños'
     info={[
       {
@@ -73,8 +74,8 @@ import Layout from '@/layouts/Layout.astro'
     ]}
   />
 
-  <Gallery 
-    client:only="react"
+  <Gallery
+    client:only='react'
     images={[
       `${prefix}/img/photo-1.webp`,
       `${prefix}/img/photo-2.webp`,
@@ -83,5 +84,11 @@ import Layout from '@/layouts/Layout.astro'
       `${prefix}/img/photo-5.webp`,
       `${prefix}/img/photo-6.webp`
     ]}
+  />
+
+  <Regalos 
+    image={`${prefix}/img/flores.webp`}
+    title='Mesa de regalos' 
+    description='Tu presencia es mi mayor regalo, pero si deseas tener un detalle conmigo, lo puedes hacer en efectivo o depositándolo en un sobre.'
   />
 </Layout>
