@@ -1,0 +1,23 @@
+---
+import LinkButton from './LinkButton.astro'
+
+const { title, description, hotels } = Astro.props
+---
+
+<section class='w-full px-8 py-20 bg-background flex flex-col items-center justify-center gap-10 font-quicksand text-base text-center'>
+  <h2 class='font-dancing text-5xl text-accent'>{title}</h2>
+  <p>{description}</p>
+  {
+    hotels.map((hotel) => (
+      <div class='flex flex-col items-center gap-8 my-10'>
+        <h3 class="text-accent text-xl uppercase">{hotel.name}</h3>
+        <p>Contacto: {hotel.phone}</p>
+        <p>{hotel.address}</p>
+        <LinkButton 
+          href={hotel.link} 
+          text='Conocer más' 
+        />
+      </div>
+    ))
+  }
+</section>

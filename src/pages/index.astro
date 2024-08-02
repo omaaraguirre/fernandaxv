@@ -2,6 +2,7 @@
 import Countdown from '@/components/Countdown.astro'
 import Gallery from '@/components/Gallery'
 import Hero from '@/components/Hero.astro'
+import Hotels from '@/components/Hotels.astro'
 import Invitation from '@/components/Invitation.astro'
 import ParallaxImage from '@/components/ParallaxImage.astro'
 import Regalos from '@/components/Regalos.astro'
@@ -95,5 +96,30 @@ import Layout from '@/layouts/Layout.astro'
 
   <Countdown
     image={`${prefix}/img/photo-3.webp`}
+  />
+
+  <Hotels 
+    title='Hospedaje' 
+    description='Para una estadía más placentera te compartimos estas sugerencias de hospedaje.'
+    hotels={[
+      {
+        name: 'Hotel Las Calandrias',
+        phone: '244 446 2020',
+        address: 'Carretera Puebla – Izucar de Matamoros, Atlixco Km. 5.',
+        link: 'https://www.lascalandrias.com.mx/',
+      },
+      {
+        name: 'Hotel Boutique la Rioja',
+        phone: '244 688 5793',
+        address: 'Paseo de las Bugambilias 3102 Col. Val de Cristo C.P. 74293',
+        link: 'https://www.lariojahb.com.mx/',
+      },
+      {
+        name: 'Rincon Sagrado',
+        phone: '244 144 9785',
+        address: 'Calle Tepexco no. 503 Col. Lomas de Temaxcalapa Atlixco, Pue. C.P. 74210',
+        link: 'https://www.rinconsagrado.com/',
+      }
+    ]}
   />
 </Layout>
