@@ -1,4 +1,5 @@
 ---
+import Countdown from '@/components/Countdown.astro'
 import Gallery from '@/components/Gallery'
 import Hero from '@/components/Hero.astro'
 import Invitation from '@/components/Invitation.astro'
@@ -90,5 +91,9 @@ import Layout from '@/layouts/Layout.astro'
     image={`${prefix}/img/flores.webp`}
     title='Mesa de regalos' 
     description='Tu presencia es mi mayor regalo, pero si deseas tener un detalle conmigo, lo puedes hacer en efectivo o depositándolo en un sobre.'
+  />
+
+  <Countdown
+    image={`${prefix}/img/photo-3.webp`}
   />
 </Layout>

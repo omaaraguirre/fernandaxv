@@ -1,0 +1,79 @@
+---
+import ParallaxImage from '@/components/ParallaxImage.astro'
+
+const { image } = Astro.props
+---
+
+<ParallaxImage image={image}>
+  <div class='absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-full max-w-96 bg-accent/80 flex flex-col items-center gap-4 p-4 rounded-xl'>
+    <p class="text-lg">¡Sólo faltan!</p>
+    <div class="w-full grid grid-cols-4 justify-between">
+      <div class='flex flex-col items-center'>
+        <span
+          id='days'
+          class='text-xl'
+        ></span>
+        <span class='text-sm'>Días</span>
+      </div>
+      <div class='flex flex-col items-center'>
+        <span
+          id='hours'
+          class='text-xl'
+        ></span>
+        <span class='text-sm'>Horas</span>
+      </div>
+      <div class='flex flex-col items-center'>
+        <span
+          id='minutes'
+          class='text-xl'
+        ></span>
+        <span class='text-sm'>Minutos</span>
+      </div>
+      <div class='flex flex-col items-center'>
+        <span
+          id='seconds'
+          class='text-xl'
+        ></span>
+        <span class='text-sm'>Segundos</span>
+      </div>
+    </div>
+  </div>
+</ParallaxImage>
+
+<script>
+  const DATE = '2024-11-30' // YYYY-MM-DD
+  const TIME = '09:00:00' // HH:MM:SS (24h)
+
+  const targetDate = new Date(`${DATE}T${TIME}`)
+
+  const padNumber = (number) => number.toString().padStart(2, '0')
+
+  const getTimeRemaining = (target) => {
+    const now = new Date()
+    const remaining = target - Number(now)
+
+    const days = Math.floor(remaining / (1000 * 60 * 60 * 24))
+    const hours = Math.floor((remaining / (1000 * 60 * 60)) % 24)
+    const minutes = Math.floor((remaining / (1000 * 60)) % 60)
+    const seconds = Math.floor((remaining / 1000) % 60)
+
+    return { days, hours, minutes, seconds }
+  }
+
+  const updateCounter = () => {
+    const { days, hours, minutes, seconds } = getTimeRemaining(targetDate)
+
+    const daysLabel = document.getElementById('days')
+    const hoursLabel = document.getElementById('hours')
+    const minutesLabel = document.getElementById('minutes')
+    const secondsLabel = document.getElementById('seconds')
+
+    if (daysLabel) daysLabel.textContent = padNumber(days)
+    if (hoursLabel) hoursLabel.textContent = padNumber(hours)
+    if (minutesLabel) minutesLabel.textContent = padNumber(minutes)
+    if (secondsLabel) secondsLabel.textContent = padNumber(seconds)
+  }
+
+  setInterval(updateCounter, 1000)
+  updateCounter()
+</script>
