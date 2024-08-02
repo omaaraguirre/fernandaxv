@@ -4,7 +4,7 @@ const { image } = Astro.props
 
 <!-- TODO: Fix background image shift on mobile -->
 <section 
-  class={`h-lvh bg-fixed bg-cover bg-top lg:bg-[center_top_-200px] relative before:absolute before:size-full before:bg-black/50`}
+  class={`min-h-lvh bg-fixed bg-cover bg-top lg:bg-[center_top_-200px] relative before:absolute before:size-full before:bg-black/50`}
   style={`background-image: url(${image})`}
 >
   <slot />
