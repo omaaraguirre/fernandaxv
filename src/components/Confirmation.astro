@@ -1,6 +1,6 @@
 ---
-import ParallaxImage from './ParallaxImage.astro'
-import RadioButton from './RadioButton.astro'
+import ParallaxImage from '@/components/ParallaxImage.astro'
+import RadioButton from '@/components/RadioButton.astro'
 
 const { title, description, image } = Astro.props
 ---
@@ -10,7 +10,7 @@ const { title, description, image } = Astro.props
     <h2 class='font-dancing text-5xl text-accent'>{title}</h2>
     <p>{description}</p>
 
-    <form class='w-full mt-40 text-left flex flex-col gap-6'>
+    <form class='w-full max-w-lg mt-40 text-left flex flex-col gap-6'>
       <legend class='text-xl uppercase border-b border-accent p-2 text-center'>
         ¿Asistirás a mi fiesta?
       </legend>
