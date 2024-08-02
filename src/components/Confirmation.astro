@@ -1,0 +1,63 @@
+---
+import ParallaxImage from './ParallaxImage.astro'
+import RadioButton from './RadioButton.astro'
+
+const { title, description, image } = Astro.props
+---
+
+<ParallaxImage image={image}>
+  <div class='flex flex-col justify-center items-center gap-10 px-8 py-32 font-quicksand text-center relative'>
+    <h2 class='font-dancing text-5xl text-accent'>{title}</h2>
+    <p>{description}</p>
+
+    <form class='w-full mt-40 text-left flex flex-col gap-6'>
+      <legend class='text-xl uppercase border-b border-accent p-2 text-center'>
+        ¿Asistirás a mi fiesta?
+      </legend>
+
+      <div class='flex gap-8'>
+        <RadioButton
+          id='yes'
+          group='answer'
+          label='Asistire'
+        />
+        <RadioButton
+          id='no'
+          group='answer'
+          label='No asistire'
+        />
+      </div>
+
+      <label class='flex flex-col gap-4'>
+        Personas confirmadas
+        <input
+          type='number'
+          id='qty'
+          name='qty'
+          class='bg-transparent border border-accent/75 rounded px-4 py-2 outline-none caret-accent shadow-[0_0_10px_2px] shadow-transparent hover:shadow-accent/50 focus:shadow-accent transition-all duration-300'
+          placeholder='Min 1, Max 3'
+          min='1'
+          max='3'
+          required
+        />
+      </label>
+      <label class='flex flex-col gap-4'>
+        ¡Envía una felicitación!
+        <textarea
+          id='message'
+          name='message'
+          class='bg-transparent border border-accent/75 rounded px-4 py-2 outline-none caret-accent shadow-[0_0_10px_2px] shadow-transparent hover:shadow-accent/50 focus:shadow-accent transition-all duration-300 resize-none'
+          placeholder='Escribe tu mensaje...'
+        ></textarea>
+      </label>
+      <button
+        type='submit'
+        class='block w-fit mx-auto cursor-pointer text-accent text-lg uppercase px-10 py-2 border-2 border-accent rounded-lg hover:scale-110 transition-all duration-300'
+      >
+        Enviar
+      </button>
+    </form>
+  </div>
+</ParallaxImage>
+
+<!-- TODO: add Form functionallity -->

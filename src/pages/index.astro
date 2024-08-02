@@ -1,4 +1,5 @@
 ---
+import Confirmation from '@/components/Confirmation.astro'
 import Countdown from '@/components/Countdown.astro'
 import Gallery from '@/components/Gallery'
 import Hero from '@/components/Hero.astro'
@@ -121,5 +122,11 @@ import Layout from '@/layouts/Layout.astro'
         link: 'https://www.rinconsagrado.com/',
       }
     ]}
+  />
+
+  <Confirmation
+    image={`${prefix}/img/flores.webp`}
+    title='Confirmación'
+    description='Es muy importante para nosotros contar con tu confirmación lo antes posible.'
   />
 </Layout>

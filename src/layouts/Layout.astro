@@ -46,6 +46,14 @@ const { title } = Astro.props;
           scrollbar-color: var(--accent) var(--primary-color);
         }
       }
+
+      @layer base {
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+        }
+      }
     </style>
 	</head>
 	<body class="bg-background text-white">

@@ -1,0 +1,16 @@
+---
+const { id, group, label } = Astro.props
+---
+
+<label class='relative cursor-pointer group select-none'>
+  <input
+    type='radio'
+    id={id}
+    name={group}
+    class='hidden peer'
+  />
+  <span class='absolute top-[6px] size-4 rounded-full bg-transparent border-2 group-hover:border-accent peer-checked:bg-accent peer-checked:border-accent peer-checked:scale-125 transition-all duration-300' />
+  <span class='text-lg ml-6 group-hover:text-accent peer-checked:text-accent transition-colors duration-300'>
+    {label}
+  </span>
+</label>
