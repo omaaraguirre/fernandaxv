@@ -2,10 +2,11 @@
 const { link, text } = Astro.props
 ---
 
-<a
-  href={link}
-  class='block w-fit cursor-pointer text-accent text-lg uppercase px-10 py-2 border-2 border-accent rounded-lg hover:bg-accent/90 hover:text-white transition-colors duration-300'
-  data-aos='fade-in'
->
-  {text}
-</a>
+<div data-aos='fade-in'>
+  <a
+    href={link}
+    class='block w-fit cursor-pointer text-accent text-lg uppercase px-10 py-2 border-2 border-accent rounded-lg hover:bg-accent/90 hover:text-white transition-colors duration-1000'
+  >
+    {text}
+  </a>
+</div>
