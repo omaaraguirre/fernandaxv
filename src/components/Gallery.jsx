@@ -10,7 +10,7 @@ const Gallery = ({ images }) => {
   return (
     <section className='w-full mx-auto px-8 py-20 bg-background flex flex-col items-center justify-center gap-12 font-quicksand text-base text-center'>
       <h2 className='font-dancing text-5xl text-accent text-center'>Galería</h2>
-      <p>Después de grandes momentos, sólo quedan magnificos recuerdos.</p>
+      <p className='text-balance'>Después de grandes momentos, sólo quedan magnificos recuerdos.</p>
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         cssMode
