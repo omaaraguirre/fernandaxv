@@ -2,13 +2,18 @@
 const { header, name, persons, footer } = Astro.props
 ---
 
-<section class='w-full min-h-lvh px-8 bg-background flex flex-col items-center justify-center gap-20 font-quicksand text-base text-center' >
+<section class='w-full min-h-lvh px-8 bg-background flex flex-col items-center justify-center gap-20 font-quicksand text-base text-center'>
   <p>{header}</p>
-  <div class="w-full flex flex-col justify-between gap-10">
-    <hr class="w-1/4 mr-auto border-accent">
-    <p class='font-dancing text-4xl text-accent'>{name}</p>
-    <p class="uppercase">{persons}</p>
-    <hr class="w-1/4 ml-auto border-accent">
+  <div class='w-full flex flex-col justify-between gap-10'>
+    <hr class='w-1/4 mr-auto border-accent' />
+    <p
+      data-aos='zoom-in'
+      class='font-dancing text-4xl text-accent'
+    >
+      {name}
+    </p>
+    <p class='uppercase'>{persons}</p>
+    <hr class='w-1/4 ml-auto border-accent' />
   </div>
   <p>{footer}</p>
 </section>

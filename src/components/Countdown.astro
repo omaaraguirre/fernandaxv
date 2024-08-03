@@ -6,8 +6,13 @@ const { image } = Astro.props
 
 <ParallaxImage image={image}>
   <div class='absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2 w-full max-w-96 bg-accent/80 flex flex-col items-center gap-4 p-4 rounded-xl'>
-    <p class="text-lg">¡Sólo faltan!</p>
-    <div class="w-full grid grid-cols-4 justify-between">
+    <p
+      data-aos='fade-down'
+      class='text-lg'
+    >
+      ¡Sólo faltan!
+    </p>
+    <div class='w-full grid grid-cols-4 justify-between'>
       <div class='flex flex-col items-center'>
         <span
           id='days'

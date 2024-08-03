@@ -67,3 +67,15 @@ const { title } = Astro.props;
     --background: theme('colors.background');
   }
 </style>
+
+<script>
+  import AOS from 'aos'
+  import 'aos/dist/aos.css'
+  AOS.init({
+    once: true,
+    startEvent: 'DOMContentLoaded',
+    duration: 1500,
+    easing: 'ease-in-out',
+    offset: -100,
+  });
+</script>

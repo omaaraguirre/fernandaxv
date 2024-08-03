@@ -16,6 +16,7 @@
     "@fontsource-variable/quicksand": "^5.0.18",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
+    "aos": "^2.3.4",
     "astro": "^4.12.2",
     "astro-icon": "^1.1.0",
     "react": "^18.3.1",

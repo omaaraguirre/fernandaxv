@@ -6,7 +6,12 @@ const { image, title, code, message, info } = Astro.props
 
 <ParallaxImage image={image}>
   <div class='absolute size-full bg-black/60 px-8 flex flex-col justify-center items-center gap-10 font-quicksand text-center'>
-    <h2 class='font-dancing text-5xl text-accent'>{title}</h2>
+    <h2
+      data-aos='fade-in'
+      class='font-dancing text-5xl text-accent'
+    >
+      {title}
+    </h2>
     <p class='text-lg uppercase'>{code}</p>
     <p>{message}</p>
     <div class='w-full max-w-4xl my-10 grid grid-cols-2 gap-8'>
@@ -17,6 +22,8 @@ const { image, title, code, message, info } = Astro.props
               src={info.image}
               alt={info.type}
               class='max-h-40 w-auto m-4'
+              loading='lazy'
+              data-aos='fade-in'
             />
             <h4 class='font-bold'>{info.title}</h4>
             <p>{info.type}</p>
