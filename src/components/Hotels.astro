@@ -5,7 +5,12 @@ const { title, description, hotels } = Astro.props
 ---
 
 <section class='w-full min-h-lvh px-8 py-20 bg-background flex flex-col items-center justify-center gap-10 font-quicksand text-base text-center'>
-  <h2 class='font-dancing text-5xl text-accent'>{title}</h2>
+  <h2
+    class='font-dancing text-5xl text-accent'
+    data-aos='fade-up'
+  >
+    {title}
+  </h2>
   <p class='text-balance'>{description}</p>
   <div class='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10'>
     {

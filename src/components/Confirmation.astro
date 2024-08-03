@@ -7,10 +7,15 @@ const { title, description, image } = Astro.props
 
 <ParallaxImage image={image}>
   <div class='flex flex-col justify-center items-center gap-10 px-8 py-32 font-quicksand text-center relative'>
-    <h2 class='font-dancing text-5xl text-accent'>{title}</h2>
+    <h2
+      class='font-dancing text-5xl text-accent'
+      data-aos='fade-up'
+    >
+      {title}
+    </h2>
     <p class='text-balance'>{description}</p>
 
-    <form class='w-full max-w-lg mt-40 text-left flex flex-col gap-6'>
+    <form class='w-full max-w-lg mt-20 text-left flex flex-col gap-6'>
       <legend
         data-aos='fade-in'
         class='text-xl uppercase border-b border-accent p-2 text-center'
@@ -55,7 +60,8 @@ const { title, description, image } = Astro.props
       </label>
       <button
         type='submit'
-        class='block w-fit mx-auto cursor-pointer text-accent text-lg uppercase px-10 py-2 border-2 border-accent rounded-lg hover:scale-110 transition-all duration-300'
+        class='block w-fit mx-auto cursor-pointer text-accent text-lg uppercase px-10 py-2 border-2 border-accent rounded-lg hover:bg-accent/90 hover:text-white transition-colors duration-300'
+        data-aos='fade-up'
       >
         Enviar
       </button>

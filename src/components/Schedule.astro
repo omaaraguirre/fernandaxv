@@ -5,7 +5,12 @@ const { title, description, date, times, location } = Astro.props
 ---
 
 <section class='w-[95%] mx-auto px-8 py-20 bg-background flex flex-col items-center justify-center gap-12 font-quicksand text-base text-center -translate-y-16'>
-  <h2 class='font-dancing text-5xl text-accent'>{title}</h2>
+  <h2
+    class='font-dancing text-5xl text-accent'
+    data-aos='fade-up'
+  >
+    {title}
+  </h2>
   <hr class='w-1/4 border-accent' />
   <p class='text-balance'>{description}</p>
   <div class='space-y-2'>

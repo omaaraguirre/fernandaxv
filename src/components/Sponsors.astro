@@ -13,7 +13,12 @@ const { message, groups, image } = Astro.props
       {
         groups.map(({ title, persons }) => (
           <div class='space-y-4'>
-            <h4 class='font-dancing text-4xl text-accent mb-8'>{title}</h4>
+            <h4
+              class='font-dancing text-4xl text-accent mb-8'
+              data-aos='fade-up'
+            >
+              {title}
+            </h4>
             {persons.map((person) => (
               <p>{person}</p>
             ))}
