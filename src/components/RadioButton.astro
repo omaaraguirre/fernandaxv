@@ -7,9 +7,10 @@ const { id, group, label } = Astro.props
     type='radio'
     id={id}
     name={group}
-    class='hidden peer'
+    class='opacity-0 peer'
+    required
   />
-  <span class='absolute top-[6px] size-4 rounded-full bg-transparent border-2 group-hover:border-accent peer-checked:bg-accent peer-checked:border-accent peer-checked:scale-125 transition-all duration-300' />
+  <span class='absolute top-[6px] left-0 size-4 rounded-full bg-transparent border-2 group-hover:border-accent peer-checked:bg-accent peer-checked:border-accent peer-checked:scale-125 transition-all duration-300' />
   <span class='text-lg ml-6 group-hover:text-accent peer-checked:text-accent transition-colors duration-300'>
     {label}
   </span>

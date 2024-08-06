@@ -1,0 +1,15 @@
+---
+import Gallery from '@/components/Gallery'
+
+const { title, message, images } = Astro.props
+---
+
+<section class='w-full min-h-svh px-8 py-20 grid place-items-center'>
+  <div class='flex flex-col items-center justify-center gap-12'>
+    <h2 class='font-dancing text-5xl text-accent text-center' data-aos='fade-up'>
+      {title}
+    </h2>
+    <p class='text-balance'>{message}</p>
+    <Gallery client:only='react' images={images} />
+  </div>
+</section>

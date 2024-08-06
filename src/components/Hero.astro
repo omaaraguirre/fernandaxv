@@ -1,18 +1,15 @@
 ---
-import ParallaxImage from '@/components/ParallaxImage.astro'
+import SimpleParallax from '@/components/SimpleParallax.astro'
 
 const { title, description, date, image } = Astro.props
 ---
 
-<ParallaxImage image={image}>
-  <div class='absolute bottom-32 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 font-quicksand'>
-    <h1
-      data-aos='fade-up'
-      class='font-dancing font-boXld text-8xl mb-10'
-    >
+<SimpleParallax image={image}>
+  <div class='absolute bottom-10 left-0 w-full px-8 py-20 flex flex-col justify-center items-center gap-4'>
+    <h1 data-aos='fade-up' class='font-dancing font-boXld text-8xl mb-10'>
       {title}
     </h1>
     <p class='uppercase text-2xl'>{description}</p>
     <p class='text-xl'>{date}</p>
   </div>
-</ParallaxImage>
+</SimpleParallax>

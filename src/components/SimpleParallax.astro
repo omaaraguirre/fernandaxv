@@ -1,0 +1,44 @@
+---
+const { image } = Astro.props
+---
+
+<div class='relative min-h-svh grid place-items-center'>
+  <div class="absolute top-0 left-0 -z-20 after:absolute after:top-0 after:left-0 after:size-full after:bg-black/50 after:z-0">
+    <img
+      class='parallax'
+      src={image}
+      alt='Fernanda XV - Photo'
+    />
+  </div>
+  <slot />
+</div>
+
+<style>
+  .parallax {
+    --translate-x: 40%;
+    --translate-y: 50px;
+
+    width: 100svw;
+    height: 100svh;
+    object-fit: cover;
+    transition: all 0.5s linear;
+
+    object-position: var(--translate-x) var(--translate-y);
+
+    @media (min-width: 768px) {
+      --translate-y: 200px;
+    }
+
+    @media (min-width: 1024px) {
+      --translate-y: 0px;
+    }
+
+    @media (min-width: 1280px) {
+      --translate-y: -100px;
+    }
+
+    @media (min-width: 1920px) {
+      --translate-y: -200px;
+    }
+  }
+</style>

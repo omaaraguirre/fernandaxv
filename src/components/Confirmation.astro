@@ -1,39 +1,25 @@
 ---
-import ParallaxImage from '@/components/ParallaxImage.astro'
 import RadioButton from '@/components/RadioButton.astro'
+import SimpleParallax from '@/components/SimpleParallax.astro'
 
 const { title, description, image } = Astro.props
 ---
 
-<ParallaxImage image={image}>
-  <div class='flex flex-col justify-center items-center gap-10 px-8 py-32 font-quicksand text-center relative'>
-    <h2
-      class='font-dancing text-5xl text-accent'
-      data-aos='fade-up'
-    >
+<SimpleParallax image={image}>
+  <div class='px-8 py-32 flex flex-col justify-center items-center gap-10'>
+    <h2 class='font-dancing text-5xl text-accent' data-aos='fade-up'>
       {title}
     </h2>
     <p class='text-balance'>{description}</p>
 
     <form class='w-full max-w-lg mt-20 text-left flex flex-col gap-6'>
-      <legend
-        data-aos='fade-in'
-        class='text-xl uppercase border-b border-accent p-2 text-center'
-      >
+      <legend data-aos='fade-in' class='text-xl uppercase border-b border-accent p-2 text-center'>
         ¿Asistirás a mi fiesta?
       </legend>
 
       <div class='flex gap-8'>
-        <RadioButton
-          id='yes'
-          group='answer'
-          label='Asistire'
-        />
-        <RadioButton
-          id='no'
-          group='answer'
-          label='No asistire'
-        />
+        <RadioButton id='yes' group='answer' label='Asistire' />
+        <RadioButton id='no' group='answer' label='No asistire' />
       </div>
 
       <label class='flex flex-col gap-4'>
@@ -67,6 +53,4 @@ const { title, description, image } = Astro.props
       </button>
     </form>
   </div>
-</ParallaxImage>
-
-<!-- TODO: add Form functionallity -->
+</SimpleParallax>

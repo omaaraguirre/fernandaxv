@@ -4,23 +4,19 @@ import LinkButton from '@/components/LinkButton.astro'
 const { title, description, date, times, location } = Astro.props
 ---
 
-<section class='w-[95%] mx-auto px-8 py-20 bg-background flex flex-col items-center justify-center gap-12 font-quicksand text-base text-center -translate-y-16'>
-  <h2
-    class='font-dancing text-5xl text-accent'
-    data-aos='fade-up'
-  >
-    {title}
-  </h2>
-  <hr class='w-1/4 border-accent' />
-  <p class='text-balance'>{description}</p>
-  <div class='space-y-2'>
-    <p>{date}</p>
-    {times.map((time) => <p>{time}</p>)}
+<section class='min-h-svh px-8 py-20 grid place-items-center'>
+  <div class='flex flex-col items-center justify-center gap-12'>
+    <h2 class='font-dancing text-5xl text-accent' data-aos='fade-up'>
+      {title}
+    </h2>
+    <hr class='w-1/4 border-accent' />
+    <p class='text-balance'>{description}</p>
+    <div class='space-y-2'>
+      <p>{date}</p>
+      {times.map((time) => <p>{time}</p>)}
+    </div>
+    <p class='text-xl max-w-52'>{location.name}</p>
+    <p class='text-balance'>{location.address}</p>
+    <LinkButton link={location.link} text='Abrir mapa' />
   </div>
-  <p class='text-xl max-w-52'>{location.name}</p>
-  <p class='text-balance'>{location.address}</p>
-  <LinkButton
-    link={location.link}
-    text='Abrir mapa'
-  />
 </section>
