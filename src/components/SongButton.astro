@@ -1,0 +1,16 @@
+---
+import { Icon } from 'astro-icon/components'
+---
+
+<button id='play' class="fixed bottom-10 right-10 bg-accent p-1 rounded-xl shadow shadow-background opacity-50 hover:opacity-100 transition-opacity duration-300">
+  <Icon name="mdi:play" class='size-10'/>
+</button>
+
+<script>
+  const song = new Audio('/song.mp3')
+  song.volume = 0.5
+  const playButton = document.querySelector('#play')
+  playButton.addEventListener('click', () => {
+    song.play()
+  })
+</script>
