@@ -10,7 +10,7 @@ const { image, title, code, message, info } = Astro.props
       {title}
     </h2>
     <p class='text-lg uppercase'>{code}</p>
-    <p>{message}</p>
+    <p class="text-balance">{message}</p>
     <div class='w-full max-w-4xl my-10 grid grid-cols-2 gap-8'>
       {
         info.map((info) => (

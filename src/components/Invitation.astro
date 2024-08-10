@@ -4,7 +4,7 @@ const { header, name, persons, footer } = Astro.props
 
 <section class='min-h-svh px-8 py-20 grid place-items-center'>
   <div class='flex flex-col justify-center items-center gap-20'>
-    <p>{header}</p>
+    <p class="text-balance">{header}</p>
     <div class='w-full flex flex-col justify-between gap-10'>
       <hr class='w-1/4 mr-auto border-accent' />
       <p data-aos='fade-up' class='font-dancing text-4xl text-accent'>
@@ -13,6 +13,6 @@ const { header, name, persons, footer } = Astro.props
       <p class='uppercase'>{persons}</p>
       <hr class='w-1/4 ml-auto border-accent' />
     </div>
-    <p>{footer}</p>
+    <p class="text-balance">{footer}</p>
   </div>
 </section>
