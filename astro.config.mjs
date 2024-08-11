@@ -1,6 +1,5 @@
 import react from "@astrojs/react"
 import tailwind from "@astrojs/tailwind"
-import icon from 'astro-icon'
 import { defineConfig } from 'astro/config'
 import path from "node:path"
 
@@ -18,7 +17,7 @@ export default defineConfig({
     outDir: "../dist",
     assetsDir: "./"
   },
-  integrations: [icon(), tailwind(), react()],
+  integrations: [tailwind(), react()],
   server: {
     host: true,
     port: 80

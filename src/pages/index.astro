@@ -9,7 +9,7 @@ import Regalos from '@/components/Regalos.astro'
 import Requirements from '@/components/Requirements.astro'
 import Schedule from '@/components/Schedule.astro'
 import SimpleParallax from '@/components/SimpleParallax.astro'
-import SongButton from '@/components/SongButton.astro'
+import SongButton from '@/components/SongButton.jsx'
 import Sponsors from '@/components/Sponsors.astro'
 import { prefix } from '@/constants'
 import Layout from '@/layouts/Layout.astro'
@@ -151,5 +151,5 @@ import Layout from '@/layouts/Layout.astro'
     description='Es muy importante para nosotros contar con tu confirmación lo antes posible.'
   />
 
-  <SongButton />
+  <SongButton client:only='react' />
 </Layout>
