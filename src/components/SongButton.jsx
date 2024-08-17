@@ -6,7 +6,6 @@ const SongButton = () => {
 
   const song = useMemo(() => {
     const audio = new Audio(`${prefix}/song.mp3`)
-    audio.volume = 0.5
     return audio
   }, [])
 
