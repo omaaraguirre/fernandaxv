@@ -8,7 +8,7 @@ export default {
         'quicksand': ['Quicksand Variable', 'sans-serif'],
       },
       colors: {
-        accent: '#DD8B92',
+        accent: '#23c9f7',
         background: '#030303',
       }
     }
