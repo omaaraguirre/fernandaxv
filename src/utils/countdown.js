@@ -1,5 +1,5 @@
-const DATE = '2024-11-30' // YYYY-MM-DD
-const TIME = '09:00:00' // HH:MM:SS (24h)
+const DATE = '2024-11-09' // YYYY-MM-DD
+const TIME = '19:30:00' // HH:MM:SS (24h)
 
 const targetDate = new Date(`${DATE}T${TIME}`)
 
