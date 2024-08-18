@@ -25,6 +25,7 @@ const Gallery = ({ images }) => {
               className='size-full object-cover object-bottom rounded-lg'
               src={image}
               alt={`Photo ${index + 1}`}
+              loading='lazy'
             />
           </SwiperSlide>
         )

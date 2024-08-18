@@ -1,10 +1,15 @@
 :root {
-  --swiper-navigation-color: theme('colors.white');
   --swiper-navigation-size: 20px;
+  --swiper-navigation-color: theme('colors.white');
   --swiper-pagination-color: theme('colors.accent');
   --swiper-pagination-bullet-inactive-color: theme('colors.accent');
   --swiper-pagination-bullet-inactive-opacity: 0.3;
   --swiper-pagination-bullet-size: 12px;
+  --swiper-pagination-bottom: -60px;
+
+  @media(width >= 768px) {
+    --swiper-pagination-bottom: -40px;
+  }
 }
 
 .swiper {
@@ -14,12 +19,8 @@
 .swiper-button-prev::after,
 .swiper-button-next::after {
   text-shadow:
-    5px 0 10px theme('colors.background'),
-    -5px 0 10px theme('colors.background'),
-    0 5px 10px theme('colors.background'),
-    0 -5px 10px theme('colors.background');
-}
-
-.swiper-pagination{
-  transform: translateY(35px);
+    5px 0 5px theme('colors.background'),
+    -5px 0 5px theme('colors.background'),
+    0 5px 5px theme('colors.background'),
+    0 -5px 5px theme('colors.background');
 }
