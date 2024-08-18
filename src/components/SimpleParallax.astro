@@ -1,44 +1,51 @@
 ---
 const { image } = Astro.props
+
+let { url, x, y, sm, md, lg, xl } = image
 ---
 
-<div class='relative min-h-svh grid place-items-center'>
+<div class='relative min-h-svh grid place-items-center overflow-hidden'>
   <div class="absolute top-0 left-0 -z-20 after:absolute after:top-0 after:left-0 after:size-full after:bg-black/50 after:z-0">
     <img
+      src={url}
       class='parallax'
-      src={image}
       alt='Fernanda XV - Photo'
+      loading="lazy"
     />
   </div>
   <slot />
 </div>
 
-<style>
+<style define:vars={{ x, y, sm, md, lg, xl }}>
   .parallax {
-    --translate-x: 40%;
-    --translate-y: 50px;
+    --position-x: var(--x);
+    --position-y: var(--y);
 
     width: 100svw;
     height: 100svh;
     object-fit: cover;
     transition: all 0.5s linear;
 
-    object-position: var(--translate-x) var(--translate-y);
+    object-position: var(--position-x) var(--position-y);
 
-    @media (min-width: 768px) {
-      --translate-y: 200px;
+    @media (width >= 768px) {
+      --position-y: var(--sm);
     }
 
-    @media (min-width: 1024px) {
-      --translate-y: 0px;
+    @media (width >= 800px) {
+      --position-y: var(--md);
     }
 
-    @media (min-width: 1280px) {
-      --translate-y: -100px;
+    @media (width >= 1024px) {
+      --position-y: var(--md);
     }
 
-    @media (min-width: 1920px) {
-      --translate-y: -200px;
+    @media (width >= 1280px) {
+      --position-y: var(--lg);
+    }
+
+    @media (width >= 1920px) {
+      --position-y: var(--xl);
     }
   }
 </style>

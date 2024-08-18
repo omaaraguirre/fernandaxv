@@ -11,7 +11,7 @@ import Requirements from '@/components/Requirements.astro'
 import Schedule from '@/components/Schedule.astro'
 import SimpleParallax from '@/components/SimpleParallax.astro'
 import Sponsors from '@/components/Sponsors.astro'
-import { prefix } from '@/constants'
+import { parallaxImages, prefix } from '@/constants'
 import Layout from '@/layouts/Layout.astro'
 ---
 
@@ -20,7 +20,7 @@ import Layout from '@/layouts/Layout.astro'
     title='María Fernanda'
     description='¡Mis XV años!'
     date='Sábado, 9 de Noviembre 2024'
-    image={`${prefix}/img/photo-1.webp`}
+    image={parallaxImages.hero}
   />
 
   <Invitation
@@ -32,7 +32,7 @@ import Layout from '@/layouts/Layout.astro'
 
   <Sponsors
     message='Hoy celebro quince años de vida rodeada de amor y apoyo incondicional. Mi familia ha sido el mejor regalo en este viaje.'
-    image={`${prefix}/img/photo-2.webp`}
+    image={parallaxImages.sponsors}
     groups={[
       {
         title: 'Mis papás',
@@ -45,7 +45,7 @@ import Layout from '@/layouts/Layout.astro'
     ]}
   />
 
-  <SimpleParallax image={`${prefix}/img/photo-3.webp`} />
+  <SimpleParallax image={parallaxImages.showcase} />
 
   <Schedule
     title='Dónde y cuando'
@@ -60,7 +60,7 @@ import Layout from '@/layouts/Layout.astro'
   />
 
   <Requirements
-    image={`${prefix}/img/photo-4.webp`}
+    image={parallaxImages.requirements}
     title='Dress code'
     code='Formal'
   />
@@ -92,12 +92,12 @@ import Layout from '@/layouts/Layout.astro'
   />
 
   <Regalos
-    image={`${prefix}/img/photo-5.webp`}
+    image={parallaxImages.regalos}
     title='Mesa de regalos'
     description='Tu presencia es mi mayor regalo, pero si deseas tener un detalle conmigo, lo puedes hacer depositándolo en un sobre.'
   />
 
-  <Countdown image={`${prefix}/img/photo-6.webp`} />
+  <Countdown image={parallaxImages.countdown} />
 
   <Hotels
     title='Hospedaje'
@@ -146,7 +146,7 @@ import Layout from '@/layouts/Layout.astro'
   />
 
   <Confirmation
-    image={`${prefix}/img/photo-7.webp`}
+    image={parallaxImages.confirmation}
     title='Confirmación'
     description='Es muy importante para nosotros contar con tu confirmación.'
   />
