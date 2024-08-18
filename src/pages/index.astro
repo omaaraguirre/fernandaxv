@@ -17,7 +17,7 @@ import Layout from '@/layouts/Layout.astro'
 
 <Layout title='XV Fernanda'>
   <Hero
-    title='Fernanda'
+    title='María Fernanda'
     description='¡Mis XV años!'
     date='Sábado, 9 de Noviembre 2024'
     image={`${prefix}/img/photo-1.webp`}
@@ -25,27 +25,27 @@ import Layout from '@/layouts/Layout.astro'
 
   <Invitation
     header='Será una noche mágica para mí y me encantaría que la disfrutes conmigo. Espero verte ahí.'
-    name='Nombre'
-    persons='# pases'
-    footer='¡Me hará muy feliz que me incorpores en este día tan especial!'
+    name='Fam Aguirre Ojeda'
+    persons='4 pases'
+    footer='¡Me hará muy feliz que me acompañes en este día tan especial!'
   />
 
   <Sponsors
-    message='Hace 15 años me regalaron la vida y a una gran familia, acompáñanos a festejar mi cumpleaños # XV.'
-    image={`${prefix}/img/flores.webp`}
+    message='Hoy celebro quince años de vida rodeada de amor y apoyo incondicional. Mi familia ha sido el mejor regalo en este viaje.'
+    image={`${prefix}/img/photo-2.webp`}
     groups={[
       {
         title: 'Mis papás',
-        persons: ['David Marco Alberto Monzalvo Vega', 'Monzerrat Lozano Jiménez']
+        persons: ['Roberto González Ruiz', 'Monserrat Ojeda Camargo']
       },
       {
-        title: 'Mis padrinos',
-        persons: ['Alicia Camarena Hernández', 'Luis Alfredo Medina Camarena']
+        title: 'Mis hermanos',
+        persons: ['Roberto González', 'Carol González']
       }
     ]}
   />
 
-  <SimpleParallax image={`${prefix}/img/photo-2.webp`} />
+  <SimpleParallax image={`${prefix}/img/photo-3.webp`} />
 
   <Schedule
     title='Dónde y cuando'
@@ -60,64 +60,64 @@ import Layout from '@/layouts/Layout.astro'
   />
 
   <Requirements
-    image={`${prefix}/img/flores.webp`}
+    image={`${prefix}/img/photo-4.webp`}
     title='Dress code'
     code='Formal'
-    message='El color rosado es reservado para la fiesta de cumpleaños'
-    info={[
-      {
-        title: 'Hombres',
-        type: 'Traje',
-        image: `${prefix}/img/suit.webp`
-      },
-      {
-        title: 'Mujeres',
-        type: 'Vestido Largo',
-        image: `${prefix}/img/dress.webp`
-      }
-    ]}
   />
 
   <Galeria
     title='Galería'
     message='Después de grandes momentos, sólo quedan magníficos recuerdos.'
     images={[
+      `${prefix}/img/photo-8.webp`,
       `${prefix}/img/photo-1.webp`,
+      `${prefix}/img/photo-9.webp`,
+      `${prefix}/img/photo-10.webp`,
       `${prefix}/img/photo-2.webp`,
+      `${prefix}/img/photo-11.webp`,
+      `${prefix}/img/photo-12.webp`,
       `${prefix}/img/photo-3.webp`,
+      `${prefix}/img/photo-13.webp`,
+      `${prefix}/img/photo-14.webp`,
       `${prefix}/img/photo-4.webp`,
+      `${prefix}/img/photo-15.webp`,
+      `${prefix}/img/photo-16.webp`,
       `${prefix}/img/photo-5.webp`,
-      `${prefix}/img/photo-6.webp`
+      `${prefix}/img/photo-17.webp`,
+      `${prefix}/img/photo-18.webp`,
+      `${prefix}/img/photo-6.webp`,
+      `${prefix}/img/photo-19.webp`,
+      `${prefix}/img/photo-7.webp`
     ]}
   />
 
   <Regalos
-    image={`${prefix}/img/flores.webp`}
+    image={`${prefix}/img/photo-5.webp`}
     title='Mesa de regalos'
-    description='Tu presencia es mi mayor regalo, pero si deseas tener un detalle conmigo, lo puedes hacer en efectivo o depositándolo en un sobre.'
+    description='Tu presencia es mi mayor regalo, pero si deseas tener un detalle conmigo, lo puedes hacer depositándolo en un sobre.'
   />
 
-  <Countdown image={`${prefix}/img/photo-3.webp`} />
+  <Countdown image={`${prefix}/img/photo-6.webp`} />
 
   <Hotels
     title='Hospedaje'
     description='Para una estadía más placentera te compartimos estas sugerencias de hospedaje.'
     hotels={[
       {
-        name: 'One',
+        name: 'Hotel One',
         phone: '+52 81 25 25 00 70',
         address: 'Av. Eugenio Garza Sada 2408, Roma, 64700 Monterrey, N.L.',
         link: 'https://maps.app.goo.gl/heiNetDMC71a6v5x6'
       },
       {
-        name: 'Fiesta Inn',
+        name: 'Hotel Fiesta Inn',
         phone: '+52 81 18 77 02 00',
         address:
           'Av. Eugenio Garza Sada 2411, Tecnológico, 64700 Monterrey, N.L.',
         link: 'https://maps.app.goo.gl/SEtAoHfuEkUucbr17'
       },
       {
-        name: 'Holiday Inn Express',
+        name: 'Hotel Holiday Inn Express',
         phone: '+52 81 83 29 60 00',
         address:
           'Av. Eugenio Garza Sada 3680-sur, Villa Los Pinos, 64770 Monterrey, N.L.',
@@ -146,9 +146,9 @@ import Layout from '@/layouts/Layout.astro'
   />
 
   <Confirmation
-    image={`${prefix}/img/flores.webp`}
+    image={`${prefix}/img/photo-7.webp`}
     title='Confirmación'
-    description='Es muy importante para nosotros contar con tu confirmación lo antes posible.'
+    description='Es muy importante para nosotros contar con tu confirmación.'
   />
 
   <SongButton client:only='react' />

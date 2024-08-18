@@ -11,12 +11,12 @@ const { title, description, date, times, location } = Astro.props
     </h2>
     <hr class='w-1/4 border-accent' />
     <p class='text-balance'>{description}</p>
+    <p class='text-xl max-w-52'>{location.name}</p>
+    <p class='text-balance'>{location.address}</p>
     <div class='space-y-2'>
       <p>{date}</p>
       {times.map((time) => <p>{time}</p>)}
     </div>
-    <p class='text-xl max-w-52'>{location.name}</p>
-    <p class='text-balance'>{location.address}</p>
     <LinkButton link={location.link} text='Abrir mapa' />
   </div>
 </section>

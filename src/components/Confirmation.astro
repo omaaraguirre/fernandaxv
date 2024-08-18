@@ -35,15 +35,6 @@ const { title, description, image } = Astro.props
           required
         />
       </label>
-      <label class='flex flex-col gap-4'>
-        ¡Envía una felicitación!
-        <textarea
-          id='message'
-          name='message'
-          class='bg-transparent border border-accent/75 rounded px-4 py-2 outline-none caret-accent shadow-[0_0_10px_2px] shadow-transparent hover:shadow-accent/50 focus:shadow-accent transition-all duration-300 resize-none'
-          placeholder='Escribe tu mensaje...'
-        ></textarea>
-      </label>
       <button
         type='submit'
         class='block w-fit mx-auto cursor-pointer text-accent text-lg uppercase px-10 py-2 border-2 border-accent rounded-lg hover:bg-accent/90 hover:text-white transition-colors duration-300'

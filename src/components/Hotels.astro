@@ -17,10 +17,7 @@ const { title, description, hotels } = Astro.props
             <h3 class='text-accent text-xl uppercase'>{hotel.name}</h3>
             <p>Contacto: {hotel.phone}</p>
             <p>{hotel.address}</p>
-            <LinkButton
-              link={hotel.link}
-              text='Conocer más'
-            />
+            <LinkButton link={hotel.link} text='Ver Mapa' />
           </div>
         ))
       }
