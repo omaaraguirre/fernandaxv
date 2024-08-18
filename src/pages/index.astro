@@ -5,11 +5,11 @@ import Galeria from '@/components/Galeria.astro'
 import Hero from '@/components/Hero.astro'
 import Hotels from '@/components/Hotels.astro'
 import Invitation from '@/components/Invitation.astro'
+import Player from '@/components/Player.astro'
 import Regalos from '@/components/Regalos.astro'
 import Requirements from '@/components/Requirements.astro'
 import Schedule from '@/components/Schedule.astro'
 import SimpleParallax from '@/components/SimpleParallax.astro'
-import SongButton from '@/components/SongButton.jsx'
 import Sponsors from '@/components/Sponsors.astro'
 import { prefix } from '@/constants'
 import Layout from '@/layouts/Layout.astro'
@@ -151,5 +151,5 @@ import Layout from '@/layouts/Layout.astro'
     description='Es muy importante para nosotros contar con tu confirmación.'
   />
 
-  <SongButton client:only='react' />
+  <Player />
 </Layout>

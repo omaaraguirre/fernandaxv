@@ -1,0 +1,44 @@
+---
+import SongButton from '@/components/SongButton'
+---
+
+<div class='fixed bottom-10 right-10 flex items-center gap-2'>
+  <div class='scroll-fade flex items-center gap-2 text-2xl text-accent animate-breath'>
+    <p class='font-dancing'>Click aquí</p>
+    <svg viewBox='0 0 20 20' class='size-8 text-accent rotate-90'>
+      <path fill='currentColor' d='M10 2.5L16.5 9H13v8H7V9H3.5z'></path>
+    </svg>
+  </div>
+  <SongButton client:only='react' />
+</div>
+
+<style>
+@keyframes breath {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.animate-breath {
+  animation: breath 2s ease-in-out infinite;
+}
+
+</style>
+
+<script>
+  window.addEventListener('scroll', () => {
+    const fadeElement = document.querySelector('.scroll-fade') as HTMLElement
+    const scrollPosition = window.scrollY || document.documentElement.scrollTop;
+
+    if (fadeElement) {
+      const fadeStart = 0;
+      const fadeEnd = 150;
+
+      const opacity = Math.max(0, 1 - (scrollPosition - fadeStart) / (fadeEnd - fadeStart));
+      fadeElement.style.opacity = opacity.toString();
+    }
+  });
+</script>
