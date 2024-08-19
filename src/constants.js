@@ -1,7 +1,6 @@
-export const prefix = process.env.NODE_ENV === 'production' ? '' : ''
+export const prefix = process.env.NODE_ENV === 'production' ? '/dannaxv' : ''
 
-export 
-const parallaxImages = {
+export const parallaxImages = {
   hero: {
     url: `${prefix}/img/photo-1.webp`,
     x: '20%',
