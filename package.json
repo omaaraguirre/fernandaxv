@@ -10,10 +10,12 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/node": "^8.3.2",
     "@astrojs/react": "^3.6.0",
     "@astrojs/tailwind": "^5.1.0",
     "@fontsource-variable/dancing-script": "^5.0.18",
     "@fontsource-variable/quicksand": "^5.0.18",
+    "@supabase/supabase-js": "^2.45.1",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
     "aos": "^2.3.4",
