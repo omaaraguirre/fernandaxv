@@ -1,4 +1,5 @@
 ---
+import { prefix } from '@/constants'
 import '@fontsource-variable/dancing-script'
 import '@fontsource-variable/quicksand'
 
@@ -16,8 +17,7 @@ const { title } = Astro.props
     <meta name='description' content='Fernanda XV' />
     <meta name='viewport' content='width=device-width' />
     <meta name='generator' content={Astro.generator} />
-    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
-    <title>{title}</title>
+    <link rel='icon' type='image/svg+xml' href=`${prefix}/favicon.svg` />    <title>{title}</title>
     <style is:inline>
       body {
         scroll-behavior: smooth;

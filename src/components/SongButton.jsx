@@ -6,7 +6,6 @@ const SongButton = () => {
 
   const song = useMemo(() => {
     const audio = new Audio(`${prefix}/song.mp3`)
-    audio.volume = 0.5
     return audio
   }, [])
 
@@ -19,7 +18,7 @@ const SongButton = () => {
 
   return (
     <button
-      className="fixed bottom-10 right-10 bg-accent p-2 rounded-lg shadow shadow-background opacity-50 active:opacity-100 md:hover:opacity-100 transition-opacity duration-300"
+      className="fixed bottom-10 right-10 bg-accent p-2 rounded-lg shadow shadow-background opacity-50 active:opacity-100 md:hover:opacity-100 transition-opacity duration-300 z-50"
       onClick={toggleSong}
     >
       {
