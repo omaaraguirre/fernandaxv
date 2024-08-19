@@ -1,5 +1,6 @@
 ---
 import SongButton from '@/components/SongButton'
+import { prefix } from '@/constants'
 ---
 
 <div class='fixed bottom-10 right-10 flex items-center gap-2 z-50'>
@@ -9,23 +10,22 @@ import SongButton from '@/components/SongButton'
       <path fill='currentColor' d='M10 2.5L16.5 9H13v8H7V9H3.5z'></path>
     </svg>
   </div>
-  <SongButton client:only='react' />
+  <SongButton url={`${prefix}/song.mp3`} client:only='react' />
 </div>
 
 <style>
-@keyframes breath {
-  0%, 100% {
-    transform: scale(1);
+  @keyframes breath {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
   }
-  50% {
-    transform: scale(1.1);
+
+  .animate-breath {
+    animation: breath 2s ease-in-out infinite;
   }
-}
-
-.animate-breath {
-  animation: breath 2s ease-in-out infinite;
-}
-
 </style>
 
 <script>

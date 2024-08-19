@@ -1,11 +1,10 @@
-import { prefix } from '@/constants'
 import { useMemo, useState } from 'react'
 
-const SongButton = () => {
+const SongButton = ({ url }) => {
   const [isPlaying, setIsPlaying] = useState(false)
 
   const song = useMemo(() => {
-    const audio = new Audio(`${prefix}/song.mp3`)
+    const audio = new Audio(url)
     return audio
   }, [])
 
