@@ -10,7 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/node": "^8.3.2",
+    "@astrojs/netlify": "^5.5.1",
     "@astrojs/react": "^3.6.0",
     "@astrojs/tailwind": "^5.1.0",
     "@fontsource-variable/dancing-script": "^5.0.18",

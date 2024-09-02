@@ -1,12 +1,12 @@
-import node from "@astrojs/node"
 import react from "@astrojs/react"
 import tailwind from "@astrojs/tailwind"
 import { defineConfig } from 'astro/config'
 import path from "node:path"
-
+import netlify from "@astrojs/netlify"
 const folderName = path.basename(process.cwd())
 const mode = process.env.NODE_ENV
 const base = mode === "production" ? `/${folderName}/` : "/"
+
 
 // https://astro.build/config
 export default defineConfig({
@@ -24,7 +24,5 @@ export default defineConfig({
     port: 80
   },
   output: "server",
-  adapter: node({
-    mode: "standalone"
-  })
+  adapter: netlify()
 });
