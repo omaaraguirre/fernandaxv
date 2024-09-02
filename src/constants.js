@@ -1,7 +1,4 @@
-import path from "node:path"
-
-const folderName = path.basename(process.cwd())
-export const prefix = process.env.NODE_ENV === 'production' ? `/${folderName}` : ''
+export const prefix = ''
 
 export const parallaxImages = {
   hero: {
