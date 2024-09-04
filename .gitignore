@@ -23,5 +23,6 @@ pnpm-debug.log*
 # jetbrains setting folder
 .idea/
 
+.netlify
 .vscode
 pnpm-lock.yaml
