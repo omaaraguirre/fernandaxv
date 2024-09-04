@@ -13,6 +13,17 @@ import SimpleParallax from '@/components/SimpleParallax.astro'
 import Sponsors from '@/components/Sponsors.astro'
 import { parallaxImages, prefix } from '@/constants'
 import Layout from '@/layouts/Layout.astro'
+
+const { slug } = Astro.params
+
+const res = await fetch(`http://localhost/api/invitados`)
+const invitados = await res.json()
+
+const invitado = invitados.find((pages) => pages.id === slug)
+
+if (!invitado) return Astro.redirect('/')
+
+const { nombre, pases } = invitado
 ---
 
 <Layout title='XV Fernanda'>
@@ -25,6 +36,8 @@ import Layout from '@/layouts/Layout.astro'
 
   <Invitation
     header='Será una noche mágica para mí y me encantaría que la disfrutes conmigo. Espero verte ahí.'
+    name={nombre}
+    persons=`${pases} pases`
     footer='¡Me hará muy feliz que me acompañes en este día tan especial!'
   />
 

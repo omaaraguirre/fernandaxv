@@ -6,42 +6,46 @@ const { title, description, image } = Astro.props
 ---
 
 <SimpleParallax image={image}>
-  <div class='px-8 py-32 flex flex-col justify-center items-center gap-10'>
-    <h2 class='font-dancing text-5xl text-accent' data-aos='fade-up'>
-      {title}
-    </h2>
-    <p class='text-balance'>{description}</p>
+  {
+    Astro.url.pathname !== '/' && (
+      <div class='px-8 py-32 flex flex-col justify-center items-center gap-10'>
+        <h2 class='font-dancing text-5xl text-accent' data-aos='fade-up'>
+          {title}
+        </h2>
+        <p class='text-balance'>{description}</p>
 
-    <form class='w-full max-w-lg mt-20 text-left flex flex-col gap-6'>
-      <legend data-aos='fade-in' class='text-xl uppercase border-b border-accent p-2 text-center'>
-        ¿Asistirás a mi fiesta?
-      </legend>
+        <form onsubmit="" class='w-full max-w-lg mt-20 text-left flex flex-col gap-6'>
+          <legend data-aos='fade-in' class='text-xl uppercase border-b border-accent p-2 text-center'>
+            ¿Asistirás a mi fiesta?
+          </legend>
 
-      <div class='flex gap-8'>
-        <RadioButton id='yes' group='answer' label='Asistire' />
-        <RadioButton id='no' group='answer' label='No asistire' />
+          <div class='flex gap-8'>
+            <RadioButton id='yes' group='answer' label='Asistire' />
+            <RadioButton id='no' group='answer' label='No asistire' />
+          </div>
+
+          <label class='flex flex-col gap-4'>
+            Personas confirmadas
+            <input
+              type='number'
+              id='qty'
+              name='qty'
+              class='bg-transparent border border-accent/75 rounded px-4 py-2 outline-none caret-accent shadow-[0_0_10px_2px] shadow-transparent hover:shadow-accent/50 focus:shadow-accent transition-all duration-300'
+              placeholder='Min 1, Max 3'
+              min='1'
+              max='3'
+              required
+            />
+          </label>
+          <button
+            type='submit'
+            class='block w-fit mx-auto cursor-pointer text-accent text-lg uppercase px-10 py-2 border-2 border-accent rounded-lg hover:bg-accent/90 hover:text-white transition-colors duration-300'
+            data-aos='fade-up'
+          >
+            Enviar
+          </button>
+        </form>
       </div>
-
-      <label class='flex flex-col gap-4'>
-        Personas confirmadas
-        <input
-          type='number'
-          id='qty'
-          name='qty'
-          class='bg-transparent border border-accent/75 rounded px-4 py-2 outline-none caret-accent shadow-[0_0_10px_2px] shadow-transparent hover:shadow-accent/50 focus:shadow-accent transition-all duration-300'
-          placeholder='Min 1, Max 3'
-          min='1'
-          max='3'
-          required
-        />
-      </label>
-      <button
-        type='submit'
-        class='block w-fit mx-auto cursor-pointer text-accent text-lg uppercase px-10 py-2 border-2 border-accent rounded-lg hover:bg-accent/90 hover:text-white transition-colors duration-300'
-        data-aos='fade-up'
-      >
-        Enviar
-      </button>
-    </form>
-  </div>
+    )
+  }
 </SimpleParallax>
