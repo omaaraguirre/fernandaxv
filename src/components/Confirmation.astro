@@ -2,12 +2,12 @@
 import RadioButton from '@/components/RadioButton.astro'
 import SimpleParallax from '@/components/SimpleParallax.astro'
 
-const { title, description, image } = Astro.props
+const { title, description, image, confirmed } = Astro.props
 ---
 
 <SimpleParallax image={image}>
   {
-    Astro.url.pathname !== '/' && (
+    Astro.url.pathname !== '/' && confirmed === false && (
       <div class='px-8 py-32 flex flex-col justify-center items-center gap-10'>
         <h2 class='font-dancing text-5xl text-accent' data-aos='fade-up'>
           {title}
@@ -45,6 +45,16 @@ const { title, description, image } = Astro.props
             Enviar
           </button>
         </form>
+      </div>
+    )
+  }
+  {
+    confirmed === true && (
+      <div class='px-8 py-32 flex flex-col justify-center items-center gap-10'>
+        <h2 class='font-dancing text-5xl text-accent' data-aos='fade-up'>
+          ¡Felicidades, has confirmado tu asistencia!
+        </h2>
+        <p class='text-balance'>Será un gusto tenerte en nuestra fiesta.</p>
       </div>
     )
   }

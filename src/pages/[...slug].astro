@@ -29,7 +29,7 @@ const invitado = invitados.find((pages) => pages.id === slug)
 
 if (!invitado) return Astro.redirect('/')
 
-const { nombre, pases } = invitado
+const { nombre, pases, confirmado } = invitado
 ---
 
 <Layout title='XV Fernanda'>
@@ -166,6 +166,7 @@ const { nombre, pases } = invitado
     image={parallaxImages.confirmation}
     title='Confirmación'
     description='Es muy importante para nosotros contar con tu confirmación.'
+    confirmed={confirmado}
   />
 
   <Player />
