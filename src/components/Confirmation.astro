@@ -59,3 +59,32 @@ const { title, description, image, confirmed } = Astro.props
     )
   }
 </SimpleParallax>
+
+<script>
+  const form = document.querySelector('form')
+  const qty = document.querySelector('#qty') as HTMLInputElement
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault()
+
+    const answer = document.querySelector(`input[name='answer']:checked`).id
+    const qtyValue: number = qty.valueAsNumber
+
+    if (answer === 'yes' && qtyValue < 1 || qtyValue > 3) {
+      alert('Cantidad de asistentes no permitida')
+      return
+    }
+
+    fetch('', {
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        confirmado: answer,
+        asistentes: qtyValue
+      })
+    })
+      .then((res) => console.log(res))
+  })
+</script>
