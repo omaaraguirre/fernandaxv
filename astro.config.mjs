@@ -11,5 +11,7 @@ export default defineConfig({
     port: 80
   },
   output: "server",
-  adapter: netlify()
+  adapter: netlify({
+    edgeMiddleware: true
+  })
 });
