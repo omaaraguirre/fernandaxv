@@ -2,13 +2,18 @@
 import RadioButton from '@/components/RadioButton.astro'
 import SimpleParallax from '@/components/SimpleParallax.astro'
 
-const { title, description, image, confirmed } = Astro.props
+const { title, description, image, confirmed, pases, id } = Astro.props
+
+const API_URL = 
+  import.meta.env.MODE === 'development' 
+    ? import.meta.env.API_URL_DEV 
+    : import.meta.env.API_URL_PROD
 ---
 
 <SimpleParallax image={image}>
   {
     Astro.url.pathname !== '/' && confirmed === false && (
-      <div class='px-8 py-32 flex flex-col justify-center items-center gap-10'>
+      <div id='confirmation' class='px-8 py-32 flex flex-col justify-center items-center gap-10'>
         <h2 class='font-dancing text-5xl text-accent' data-aos='fade-up'>
           {title}
         </h2>
@@ -31,9 +36,9 @@ const { title, description, image, confirmed } = Astro.props
               id='qty'
               name='qty'
               class='bg-transparent border border-accent/75 rounded px-4 py-2 outline-none caret-accent shadow-[0_0_10px_2px] shadow-transparent hover:shadow-accent/50 focus:shadow-accent transition-all duration-300'
-              placeholder='Min 1, Max 3'
+              placeholder={`Min 1, Max ${pases}`}
               min='1'
-              max='3'
+              max={pases}
               required
             />
           </label>
@@ -48,43 +53,59 @@ const { title, description, image, confirmed } = Astro.props
       </div>
     )
   }
-  {
-    confirmed === true && (
-      <div class='px-8 py-32 flex flex-col justify-center items-center gap-10'>
-        <h2 class='font-dancing text-5xl text-accent' data-aos='fade-up'>
-          ¡Felicidades, has confirmado tu asistencia!
-        </h2>
-        <p class='text-balance'>Será un gusto tenerte en nuestra fiesta.</p>
-      </div>
-    )
-  }
+  <div id='message' class:list={[ 
+    'px-8 py-32 flex-col justify-center items-center gap-10',
+    { 
+      'flex': confirmed,
+      'hidden': !confirmed
+    }
+  ]}>
+    <h2 class='font-dancing text-5xl text-accent' data-aos='fade-up'>
+      ¡Gracias por confirmar!
+    </h2>
+    <p class='text-balance'></p>
+  </div>
 </SimpleParallax>
 
-<script>
+<script define:vars={{ pases, API_URL, id }}>
   const form = document.querySelector('form')
-  const qty = document.querySelector('#qty') as HTMLInputElement
+  const qty = document.querySelector('#qty')
+
+  if (!form) return
 
   form.addEventListener('submit', (e) => {
     e.preventDefault()
 
     const answer = document.querySelector(`input[name='answer']:checked`).id
-    const qtyValue: number = qty.valueAsNumber
+    const qtyValue = answer === 'no' ? 0 : qty.valueAsNumber
 
-    if (answer === 'yes' && qtyValue < 1 || qtyValue > 3) {
+    if (answer === 'yes' && qtyValue < 1 || qtyValue > pases) {
       alert('Cantidad de asistentes no permitida')
       return
     }
-
-    fetch('', {
+    
+    fetch(API_URL + `/${id}` , {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-        confirmado: answer,
+        confirmado: true,
         asistentes: qtyValue
       })
     })
-      .then((res) => console.log(res))
+      .then((res) => {
+        const message = document.querySelector('#message')
+        message.classList.remove('hidden')
+        message.classList.add('flex')
+        message.querySelector('p').textContent =
+        answer === 'yes'
+          ? 'Será un gusto tenerte en nuestra fiesta.'
+          : 'Será una lástima que no asistirás a la fiesta 😔.'
+
+        const confirmation = document.querySelector('#confirmation')
+        confirmation.classList.add('hidden')
+      })
+      .catch((err) => console.log(err))
   })
 </script>
