@@ -63,7 +63,13 @@ const API_URL =
     <h2 class='font-dancing text-5xl text-accent' data-aos='fade-up'>
       ¡Gracias por confirmar!
     </h2>
-    <p class='text-balance'></p>
+    <p class='text-balance'>
+      {
+        confirmed
+          ? 'Será un gusto tenerte en nuestra fiesta.'
+          : 'Será una lástima que no asistirás a la fiesta 😔.'
+      }
+    </p>
   </div>
 </SimpleParallax>
 
